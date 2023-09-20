@@ -5,8 +5,6 @@ function newItem() {
 
     let li = $("<li></li>");
     let inputValue = $("#input").val();
-    // Why is this append syntax different than #list?
-    // $("li").append(inputValue); why wouldn't this code work?
     li.append(inputValue);
 
 
@@ -17,7 +15,7 @@ function newItem() {
     }
 
     //2. Crossing out an item from the list of items:
-  
+
     li.on("dblclick", function crossOut() {
         li.toggleClass("strike");
     });
@@ -28,6 +26,7 @@ function newItem() {
     li.append(crossOutButton);
 
     crossOutButton.on("click", deleteListItem);
+
     //3(ii). Adding CLASS DELETE (DISPLAY: NONE) from the css:
     function deleteListItem() {
         li.addClass("delete")
